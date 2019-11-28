@@ -1,7 +1,7 @@
 <?php
   require('includes/db.php');
     // If form submitted, insert values into the database.
-    if (isset($_REQUEST['firstname'])){
+    if (isset($_REQUEST['submit'])){
     $firstname = stripslashes($_REQUEST['firstname']); // removes backslashes
     $firstname = mysqli_real_escape_string($con,$firstname); //escapes special characters in a string
     $lastname = stripslashes($_REQUEST['lastname']);
@@ -16,17 +16,34 @@
     $confirmpass = mysqli_real_escape_string($con,$password);
 
    
-        $query = "INSERT into `users` (firstname, lastname, email, department, password) VALUES ('$firstname', '$lastname','$email','$department','".md5($password)."')";
-        $result = mysqli_query($con,$query);
-        if($result){
+        
+
+        $query2 = "SELECT `email` FROM `users` WHERE `email` = '".$_POST['email']."'";
+
+        $select = mysqli_query($con, $query2) or exit(mysqli_error($con));
+
+		if(mysqli_num_rows($select) > 0){
+		    echo "<div class='alert alert-danger' style='text-align: center; width: 400px; margin: 0px auto'>
+            <strong>Sorry, </strong> Email already exist!!!
+          </div>"; 
+
+		} else {
+			$query = "INSERT into `users` (firstname, lastname, email, department, password) VALUES ('$firstname', '$lastname','$email','$department','".md5($password)."')";
+        	$result = mysqli_query($con,$query);
+
+        	if ($result) {
+        		header("Location: login.php");
+        	}
+		}
+       
+
+        // if($result){
         	
-        	//$msg = "You are registered successfully, kindly login to continue";
-        	header("Location: login.php");
+        // 	//$msg = "You are registered successfully, kindly login to continue";
+        // 	
 			
-        	
-        	
-            echo "<div class='myForm'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-        }
+        //     //echo "<div class='myForm'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+        // }
     }    
 
 ?>
@@ -164,7 +181,7 @@
 		            </div>
 		            
 		            <p>*Please kindly ensure all fields are filled correctly before submitting.</p>
-		            <input type="submit" class="btn btn-primary" value="REGISTER ME!">
+		            <input type="submit" name= "submit" class="btn btn-primary" value="REGISTER ME!">
 		            <p> Want to LogIn? |<a href='login.php'> Login Here</a></p>
           </form>
 	            </div>
