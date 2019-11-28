@@ -1,0 +1,116 @@
+body {
+	  background:#fff;
+	  color: #666666;
+	  font-family: "Open Sans", sans-serif;
+}
+p{
+  text-align: center;
+  color: #843534;
+}
+
+#logo{
+  margin: 0px 20px;
+}
+
+.bodyImage{
+  margin-left: 10px;
+}
+
+#hero h1 {
+  margin: 30px 0 10px 0;
+  font-weight: 300;
+  line-height: 48px;
+  text-transform: ;
+  color: #262626;
+  font-family:"Open Sans", sans-serif;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 23px;
+    line-height: 36px;
+  }
+}
+
+#hero h2 {
+  color: #999;
+  margin-bottom: 50px;
+  text-align: center;
+}
+#hero h2 .rotating{
+  color: #d98c33;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 30px;
+  }
+  #hero h2 .rotating {
+    display: block;
+  }
+}
+
+#hero .rotating > .animated {
+  display: inline-block;
+  
+}
+#footer{
+  height: 40px;
+  width: 100%;
+  background: #d2ae6d;
+}
+#footer > .actions{
+ padding: 60px;
+ padding-left: 520px;
+}
+#hero .actions a {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+}
+
+#hero .btn-signup {
+  background: #;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero .btn-signup:hover {
+  background: #303030;
+  border: 2px solid #fff;
+  color: #fff;
+}
+#hero .btn-signup:visited {
+  background: none;
+  border:none;
+  outline: none;
+}
+
+#hero .btn-login {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero .btn-login:hover {
+  background: #303030;
+  border: 2px solid #fff;
+}
+#hero .btn-login:visited {
+  background: none;
+  border: none;
+  outline: none;
+}
+.form-group{
+  margin-left: 30px;
+}

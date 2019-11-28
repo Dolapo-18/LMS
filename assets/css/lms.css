@@ -1,0 +1,26 @@
+body {
+	  background:#fff;
+	  color: #666666;
+	  font-family: "Open Sans", sans-serif;
+}
+p{
+  
+  color: #843534;
+}
+#logo{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+hr {
+	box-shadow: 0 20px 20px -20px #333; 
+}
+.bodyImage{
+	
+	float: left;
+	height: 50px;
+ }
+ .myForm{
+ }
+ .error {
+ 	font-size: 25px;
+ }
